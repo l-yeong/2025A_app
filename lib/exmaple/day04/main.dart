@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:tj2025a_app/exmaple/day04/pages/DetailPage.dart';
+import 'package:tj2025a_app/exmaple/day04/pages/InfoPage.dart';
+import 'package:tj2025a_app/exmaple/day04/pages/MainPage.dart';
+import 'package:tj2025a_app/exmaple/day04/pages/HomePage.dart';
+import 'package:tj2025a_app/exmaple/day04/pages/SettingPage.dart';
+
+void main(){ // 프로그램 실행 시작점
+  runApp( MyApp() ); // runApp() 플러터 앱을 시작하는 함수
+  // new MyApp() 내가 만든 루트(최초) 위젯 , new 생략가능
+}
+class MyApp extends StatelessWidget{ // 앱 전체의 루트 위젯 정의
+  // StatelessWidget : 상태 없는 위젯으로 부터 상속받기
+  @override
+  Widget build(BuildContext context) {
+    // return MaterialApp( routes: { "경로명" : (context) => 위젯명() } );
+    return MaterialApp(
+      initialRoute: "/", // 앱 시작하는 최초의 경로 지정
+      routes: { // 정의한경로 와 해당 위젯을 연결하는 MAP 형식
+        "/" : (context) => MainPage() ,
+        "/home" : (context) => HomePage() , // 다른 파일의 위젯 import
+        "/info" : (context) => InfoPage(),
+        "/setting" : (context) => SettingPage(),
+        "/detail" : (context) => DetailPage(),
+      },
+    ); // M A end
+  } // build end
+} // class end
